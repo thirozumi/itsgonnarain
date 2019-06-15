@@ -2,7 +2,7 @@
 
 const audioContext = new AudioContext();
 
-const sound_path = '../assets/sounds/1.wav';
+const sound_path = './assets/sounds/1.wav';
 const start = document.getElementById('start');
 const visuals = document.getElementById('visuals');
 
