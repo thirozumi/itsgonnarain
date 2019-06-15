@@ -1,0 +1,62 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+@keyframes move1 {
+  0% { transform: translate(0, -10px) rotate(0deg); }
+  100% { transform: translate(70px, 0px) rotate(360deg); }
+}
+
+@keyframes move2 {
+  0% { transform: translate(1px, 0px) rotate(0deg); }
+  100% { transform: translate(10px, -2px) rotate(10deg); }
+}
+
+#start {
+}
+
+#visuals {
+  display: none;
+}
+
+.visual {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual.is-show {
+  z-index: 2;
+}
+
+#visual1 { background: #fefefe; }
+#visual2 { background: #f6f2f1; }
+#visual3 { background: #e1dddc; }
+#visual4 { background: #e8e7ea; }
+#visual5 { background: #a8a9a4; }
+
+.visual img {
+  position: absolute;
+}
+
+.visual img[src$='.png'] {
+  mix-blend-mode: difference;
+}
+
+.visual img:nth-child(even) {
+  animation: move1 600s linear infinite;
+}
+
+.visual img:nth-child(odd) {
+  animation: move2 15s ease-in-out infinite alternate;
+}
